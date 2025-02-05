@@ -48,13 +48,20 @@
               <a href="#contact" class="nav__link nav-link contact">Contact</a>
             </li>
             <li class="nav__item">
-              <a
+              <!-- <a
                 href="./UtkarshChauhan-FullStack.pdf" download="./UtkarshChauhan-FullStack.pdf"
                 target="_blank"
                 class="nav__link nav-link"
                 id=""
                 >Resume</a
-              >
+              > -->
+
+            <a href="./UtkarshChauhan-FullStack.pdf" 
+  id="resumeLink"
+  class="nav__link nav-link">
+  Resume
+</a>
+              
             </li>
             <li class="nav__item">
               <a href="#" class="nav__link" id="mode-toggle"
@@ -775,4 +782,25 @@
   <script src="./assets/js/scrollReveal.min.js"></script>
   <script src="./assets/js/main.js"></script>
 
+
+  <!-- ----------------resume  download and open in new tab------------- -->
+
+  <script>
+    document.getElementById("resumeLink").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default behavior
+  
+        // Open the PDF in a new tab
+        window.open(this.href, "_blank");
+  
+        // Trigger automatic download
+        let a = document.createElement("a");
+        a.href = this.href;
+        a.download = "UtkarshChauhan-FullStack.pdf"; 
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    });
+  </script>
+
+  <!-- ------------------------------ -->
 </html>
